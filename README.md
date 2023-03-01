@@ -1,9 +1,13 @@
 # Transformice | BruteForce Saldırısı
 
-Transformice hesaplarına önceden hazırlanmış wordlist ile saldırı yapar. Sonuçları discorda gönderir.
+### Özellikler
+- Denenen şifreleri webhook aracılığıyla discord kanalına log olarak gönderir.
+- Selenium sayesinde bruteforce için sitelerine koydukları auth işe yaramaz.
 
-# Kullanım
-1 - Python indirin.
-2 - TFMBrute.py içindeki webhook linklerini kendi linkleriniz ile değiştirin.
-2 - Klasörün içine girip konsola python TFMBrute.py yazın.
-3 - Saldırı yapılacak hesabın ismini girin.
+
+### Kullanım
+- [Python](https://www.python.org/downloads/ "Python") indirin.
+- TFMBrute.py içindeki webhook linklerini kendi linkleriniz ile değiştirin.
+- Klasörün içine girip konsola python TFMBrute.py yazın.
+- Saldırı yapılacak hesabın ismini girin.
+

